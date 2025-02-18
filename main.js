@@ -10,3 +10,5 @@ const none = null;
 console.log(typeof none);
 const undefinedType = undefined;
 console.log(typeof undefinedType);
+const symbolString = $;
+console.log(typeof symbolString);
