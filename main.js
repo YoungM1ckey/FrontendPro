@@ -1,15 +1,15 @@
-let numberFromUser = prompt("Enter your number");
+let numberFromUser = Number(prompt("Enter your number"));
 
-let numberFirst = numberFromUser / 100 | 0;
-numberFromUser %= 100;
-let numberSecond = numberFromUser / 10 | 0;
-numberFromUser %= 10;
-let numberThird = numberFromUser / 1 | 0;
-numberFromUser %= 1;
-console.log(numberFirst, numberSecond, numberThird);
+let numberFirst = Math.floor (numberFromUser / 100);
+let numberSecond = Math.floor((numberFromUser % 100) / 10);
+let numberThird = numberFromUser % 10;
 
-if (numberFirst == numberSecond && numberSecond == numberThird) {
+// console.log(numberFirst, numberSecond, numberThird);
+
+if (numberFirst === numberSecond && numberSecond === numberThird) {
     alert("All numbers are the same");
+} else if (numberFirst === numberSecond || numberSecond === numberThird || numberFirst === numberThird) {
+    alert("There are identical numbers");
 } else {
-
+    alert("All numbers are different");
 }
