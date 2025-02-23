@@ -7,3 +7,9 @@ numberFromUser %= 10;
 let numberThird = numberFromUser / 1 | 0;
 numberFromUser %= 1;
 console.log(numberFirst, numberSecond, numberThird);
+
+if (numberFirst == numberSecond && numberSecond == numberThird) {
+    alert("All numbers are the same");
+} else {
+
+}
