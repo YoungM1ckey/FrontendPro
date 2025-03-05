@@ -4,4 +4,7 @@ function add(a) {
     }
 }
 
-console.log(add(3) (22));
+let number1 = prompt("Enter a first number");
+let number2 = prompt("Enter a second number");
+
+alert(`Result: ${add(number1)(number2)}`);
