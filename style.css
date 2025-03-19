@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+}
+
+.block {
+    margin-top: 10px;
+    margin-inline: auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#buttonForChangeImg {
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+#imageChange {
+    width: 800px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 6px;
+}
