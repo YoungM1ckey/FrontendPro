@@ -22,15 +22,10 @@ body {
     gap: 20px;
 }
 
-.controlPanel {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
 #buttonApplyColor {
     border: none;
     border-radius: 12px;
     padding: 10px;
     font-weight: bold;
+    cursor: pointer;
 }
