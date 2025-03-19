@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin-inline: auto;
+    margin-top: 100px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 2px 2px 8px #ccc;
+    gap: 20px;
+}
+
+.controlPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#buttonApplyColor {
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    font-weight: bold;
+}
