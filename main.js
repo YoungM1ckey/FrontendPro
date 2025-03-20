@@ -1,8 +1,8 @@
 function createTable(size) {
     const table = document.createElement("table");
-    for (let i = 0; i < size; i++) {
+    for (let i = 1; i <= size; i++) {
         const row = document.createElement("tr");
-        for (let j = 0; j < size; j++) {
+        for (let j = 1; j <= size; j++) {
             const cell = document.createElement("td");
             cell.textContent = i * j;
             row.appendChild(cell);
