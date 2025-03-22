@@ -9,7 +9,30 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-
+<div class="todoBlock">
+    <h1 class="list__title">To-Do list</h1>
+    <ul class="list__items" id="tasks">
+        <li class="list__item">
+            <span class="list__item__text">Lorem ipsum dolor sit amet.</span>
+            <button type="button">Delete</button>
+        </li>
+        <li class="list__item">
+            <span class="list__item__text">Lorem ipsum dolor sit amet.</span>
+            <button type="button">Delete</button>
+        </li>
+        <li class="list__item">
+            <span class="list__item__text">Lorem ipsum dolor sit amet.</span>
+            <button type="button">Delete</button>
+        </li>
+    </ul>
+    <div class="list__add__item">
+        <label>
+            Create task
+            <input class="list__add__input" id="nameCreateNewTask" name="item" placeholder="New task" type="text">
+        </label>
+        <button class="list__add__button" id="btnCreateNewTask" type="button">+</button>
+    </div>
+</div>
 <script src="main.js"></script>
 </body>
 </html> 
