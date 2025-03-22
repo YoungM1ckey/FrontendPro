@@ -3,7 +3,9 @@ const btnCreateNewTask = document.querySelector("#btnCreateNewTask");
 const tasks = document.querySelector("#tasks");
 
 tasks.addEventListener("click", (e) => {
-    e.target.parentElement.remove();
+    if (e.target.tagName === "BUTTON") {
+        e.target.parentElement.remove();
+    }
 })
 
 btnCreateNewTask.addEventListener("click", () => {
