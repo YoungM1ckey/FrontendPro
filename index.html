@@ -9,7 +9,25 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-
+<div class="block">
+    <form action="#" class="block-form" id="formFeedBack">
+        <h2 class="form__contact__title">We would like to help you</h2>
+        <div class="inputs">
+            <input class="contact__input" id="username" name="username" placeholder="Name" type="text"/>
+            <span class="errorInput" id="error-name"></span>
+            <textarea class="contact__input" id="message" name="message" placeholder="Message"></textarea>
+            <span class="errorInput" id="error-message"></span>
+        </div>
+        <h5 class="contact__user__title">How to answer you?</h5>
+        <div class="inputs">
+            <input class="contact__input" name="phone" placeholder="Phone numbre" type="tel"/>
+            <span class="errorInput" id="error-phone"></span>
+            <input class="contact__input" name="email" placeholder="Email" type="text"/>
+            <span class="errorInput" id="error-email"></span>
+        </div>
+        <button class="button-massage" id="submitFromButton" type="submit">Send message</button>
+    </form>
+</div>
 <script src="main.js"></script>
 </body>
 </html> 

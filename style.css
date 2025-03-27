@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.block-form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background: #F5F5FA;
+    border-radius: 12px;
+    width: 500px;
+}
+
+.form__contact__title {
+    background: linear-gradient(to right, #f0145a, #ef8080);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 30px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact__input {
+    display: flex;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    gap: 15px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    resize: none;
+
+    &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+.massage-input {
+    height: 130px;
+}
+
+.contact__user__title {
+    margin-bottom: 15px;
+    color: #B3B3BA;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.button-massage {
+    padding: 18px 30px;
+    /*background-color: $color-blue-link;*/
+    background: #24A3FF;
+    border-radius: 12px;
+    border: none;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 20px;
+    box-shadow: 0 0 20px 0 rgba(36, 163, 255, 0.5);
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 133, 255, 1);
+    }
+
+    &:active {
+        background-color: #006CCF;
+    }
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    margin-top: 160px;
+}
+
+.errorInput {
+    color: #ac1717;
+    font-weight: bold;
+}
