@@ -1,0 +1,214 @@
+<section class="team">
+    <div class="wrapper">
+        <button class="button-nav-slider" id="previousSlide"></button>
+        <div class="slides">
+            <div class="slide-team-title">
+                <img
+                        alt="member-team"
+                        class="image-team-title"
+                        src="./images/team-1.png"
+                />
+                <div class="content-team-block">
+                    <a class="service-title-link" href="#"
+                    >Команда
+                        <svg
+                                class="service-title-link-icon"
+                                fill="none"
+                                height="13"
+                                viewBox="0 0 12 13"
+                                width="12"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                    class="hover-icon-title-link"
+                                    d="M3.5 2L8 6.5L3.5 11"
+                                    stroke="#24A3FF"
+                                    strokeWidth="2"></path>
+                        </svg>
+                    </a>
+                    <h2 class="team-title">
+                        Ми звикли брати на себе відповідальність та завжди гарантуємо
+                        чесну, вчасну допомогу, навіть у ситуаціях, коли більшість
+                        безсилі.
+                    </h2>
+                    <div class="block-member-team">
+                        <h4 class="name-member-team">Олександр Олександровський</h4>
+                        <p class="about-member-team">Керуючий партнер</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-team-title">
+                <img
+                        alt="member-team"
+                        class="image-team-title"
+                        src="./images/team-1.png"
+                />
+                <div class="content-team-block">
+                    <a class="service-title-link" href="#"
+                    >Команда
+                        <svg
+                                class="service-title-link-icon"
+                                fill="none"
+                                height="13"
+                                viewBox="0 0 12 13"
+                                width="12"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                    class="hover-icon-title-link"
+                                    d="M3.5 2L8 6.5L3.5 11"
+                                    stroke="#24A3FF"
+                                    strokeWidth="2"></path>
+                        </svg>
+                    </a>
+                    <h2 class="team-title">
+                        Ми звикли брати на себе відповідальність та завжди гарантуємо
+                        чесну, вчасну допомогу, навіть у ситуаціях, коли більшість
+                        безсилі.
+                    </h2>
+                    <div class="block-member-team">
+                        <h4 class="name-member-team">Олександр Олександровський</h4>
+                        <p class="about-member-team">Керуючий партнер</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-team-title">
+                <img
+                        alt="member-team"
+                        class="image-team-title"
+                        src="./images/team-1.png"
+                />
+                <div class="content-team-block">
+                    <a class="service-title-link" href="#"
+                    >Команда
+                        <svg
+                                class="service-title-link-icon"
+                                fill="none"
+                                height="13"
+                                viewBox="0 0 12 13"
+                                width="12"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                    class="hover-icon-title-link"
+                                    d="M3.5 2L8 6.5L3.5 11"
+                                    stroke="#24A3FF"
+                                    strokeWidth="2"></path>
+                        </svg>
+                    </a>
+                    <h2 class="team-title">
+                        Ми звикли брати на себе відповідальність та завжди гарантуємо
+                        чесну, вчасну допомогу, навіть у ситуаціях, коли більшість
+                        безсилі.
+                    </h2>
+                    <div class="block-member-team">
+                        <h4 class="name-member-team">Олександр Олександровський</h4>
+                        <p class="about-member-team">Керуючий партнер</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dots-slider">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <button class="button-nav-slider" id="nextSlide"></button>
+    </div>
+</section>
+
+/*@use '../../assets/variables' as *;*/
+
+* {
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+margin-left: 30px;
+margin-right: 30px;
+}
+
+
+.slide-team-title {
+display: flex;
+width: 100%;
+/*border-radius: 12px;*/
+/*overflow: hidden;*/
+}
+
+.image-team-title {
+object-fit: cover;
+width: 100%;
+min-height: 500px;
+height: 100%;
+}
+
+.service-title-link-icon {
+margin: 0;
+}
+
+.service-title-link {
+text-decoration: none;
+color: #24A3FF;
+}
+
+.content-team-block {
+padding: 30px;
+align-items: flex-start;
+background-color: #f5f5fa;
+
+.team-title-link {
+text-decoration: none;
+color: #24A3FF;
+font-weight: 700;
+font-size: 14px;
+line-height: 17px;
+text-transform: uppercase;
+display: inline-flex;
+align-items: center;
+gap: 2px;
+margin-bottom: 5px;
+}
+
+.block-member-team {
+margin-top: 30px;
+
+.name-member-team {
+color: #b3b3ba;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+margin-bottom: 6px;
+}
+
+.about-member-team {
+font-weight: 400;
+font-size: 14px;
+line-height: 22px;
+color: #b3b3ba;
+}
+}
+
+.team-title {
+font-weight: 700;
+font-size: 30px;
+line-height: 36px;
+background: linear-gradient(to right, #f0145a, #ef8080);;
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+overflow-wrap: break-word;
+}
+}
+
+.dots-slider {
+text-align: center;
+}
+
+.slides {
+display: flex;
+overflow: scroll;
+border-radius: 12px;
+white-space: nowrap;
+}
