@@ -16,7 +16,7 @@ images.forEach((src) => {
     slide.classList.add('slide');
 
     const img = document.createElement('img');
-    img.src = src = `images/${src}`;
+    img.src = `images/${src}`;
     img.alt = "Slide Image";
 
     slide.appendChild(img);
