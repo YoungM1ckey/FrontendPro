@@ -1,4 +1,4 @@
-let time = 15;
+let time = 66;
 const timerElement = document.querySelector('#timer');
 function displayTimer(seconds) {
     const minutes = Math.floor(seconds / 60);
