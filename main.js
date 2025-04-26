@@ -1,86 +1,99 @@
 const postsContainer = document.querySelector('#posts');
 const postForm = document.querySelector('#postForm');
-const successMessage = document.querySelector('#successMessage');
+const message = document.querySelector('#message');
 
-async function fetchPosts() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10');
-    const posts = await response.json();
-
-    posts.forEach(post => {
-        createPostElement(post);
-    });
-}
-
-// Створення HTML елементу поста
-function createPostElement(post) {
-    const postEl = document.createElement('div');
-    postEl.classList.add('post');
-    postEl.innerHTML = `
-    <h3>${post.title}</h3>
-    <p>${post.body}</p>
-    <button onclick="loadComments(${post.id}, this)">Load comments</button>
-    <div class="comments" id="comments-${post.id}"></div>
-  `;
-    postsContainer.appendChild(postEl);
-}
-
-async function loadComments(postId, button) {
-    const commentsContainer = document.querySelector(`#comments-${postId}`);
-
-    if (commentsContainer.childElementCount > 0) {
-        commentsContainer.innerHTML = '';
-        button.textContent = "Load comments";
-        return;
-    }
-
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments?_limit=2`);
-    const comments = await response.json();
-
-    comments.forEach(comment => {
-        const commentEl = document.createElement('div');
-        commentEl.classList.add('comment');
-        commentEl.innerHTML = `
-      <strong>${comment.name}</strong> (<a href="mailto:${comment.email}">${comment.email}</a>)
-      <p>${comment.body}</p>
-    `;
-        commentsContainer.appendChild(commentEl);
+fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(posts) {
+        posts.forEach(function(post) {
+            const postElement = document.createElement('div');
+            postElement.classList.add('post');
+            postElement.innerHTML = `
+        <h3>${post.title}</h3>
+        <p>${post.body}</p>
+        <button data-post-id="${post.id}">Load comments</button>
+        <div class="comments" id="comments-${post.id}"></div>
+      `;
+            postsContainer.appendChild(postElement);
+        });
+    })
+    .catch(function(error) {
+        console.error('Error load posts:', error);
     });
 
-    button.textContent = "Hide comments";
-}
+// Обробка натискання кнопки "Завантажити коментарі"
+postsContainer.addEventListener('click', function(event) {
+    if (event.target.tagName === 'BUTTON') {
+        const postId = event.target.getAttribute('data-post-id');
+        const commentsContainer = document.querySelector('#comments-' + postId);
 
-postForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+        if (commentsContainer.childElementCount > 0) {
+            return;
+        }
 
-    const title = document.querySelector('#title').value.trim();
-    const body = document.querySelector('#body').value.trim();
-
-    if (!title || !body) {
-        alert('All fields must be filled!');
-        return;
+        fetch('https://jsonplaceholder.typicode.com/posts/' + postId + '/comments?_limit=2')
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(comments) {
+                comments.forEach(function(comment) {
+                    const commentElement = document.createElement('div');
+                    commentElement.classList.add('comment');
+                    commentElement.innerHTML = `
+            <strong>${comment.name}</strong> (${comment.email})
+            <p>${comment.body}</p>
+          `;
+                    commentsContainer.appendChild(commentElement);
+                });
+            })
+            .catch(function(error) {
+                console.error('Error post loading:', error);
+            });
     }
+});
 
-    const newPost = {
-        title,
-        body,
-        userId: 1
-    };
+// Обробка форми створення нового поста
+postForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    const title = document.querySelector('#title').value;
+    const body = document.querySelector('#body').value;
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         headers: {
-            'Content-type': 'application/json'
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify(newPost)
-    });
+        body: JSON.stringify({
+            title: title,
+            body: body,
+            userId: 1
+        })
+    })
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(newPost) {
+            message.textContent = 'Post added!';
+            message.classList.add('success');
 
-    const createdPost = await response.json();
+            // Додаємо новий пост до списку
+            const newPostElement = document.createElement('div');
+            newPostElement.classList.add('post');
+            newPostElement.innerHTML = `
+      <h3>${newPost.title}</h3>
+      <p>${newPost.body}</p>
+      <button data-post-id="${newPost.id}">Load comments</button>
+      <div class="comments" id="comments-${newPost.id}"></div>
+    `;
+            postsContainer.prepend(newPostElement);
 
-    successMessage.textContent = 'Post created!';
-    setTimeout(() => successMessage.textContent = '', 3000);
-
-    createPostElement(createdPost);
-
-    postForm.reset();
+            // Очищаємо форму
+            postForm.reset();
+        })
+        .catch(function(error) {
+            console.error('Error creating post:', error);
+        });
 });
-fetchPosts();
