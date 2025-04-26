@@ -23,7 +23,6 @@ fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
         console.error('Error load posts:', error);
     });
 
-// Обробка натискання кнопки "Завантажити коментарі"
 postsContainer.addEventListener('click', function(event) {
     if (event.target.tagName === 'BUTTON') {
         const postId = event.target.getAttribute('data-post-id');
@@ -54,7 +53,6 @@ postsContainer.addEventListener('click', function(event) {
     }
 });
 
-// Обробка форми створення нового поста
 postForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -79,7 +77,6 @@ postForm.addEventListener('submit', function(event) {
             message.textContent = 'Post added!';
             message.classList.add('success');
 
-            // Додаємо новий пост до списку
             const newPostElement = document.createElement('div');
             newPostElement.classList.add('post');
             newPostElement.innerHTML = `
