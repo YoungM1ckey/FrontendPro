@@ -87,7 +87,6 @@ postForm.addEventListener('submit', function(event) {
     `;
             postsContainer.prepend(newPostElement);
 
-            // Очищаємо форму
             postForm.reset();
         })
         .catch(function(error) {
