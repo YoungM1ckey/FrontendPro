@@ -9,7 +9,13 @@
     <link href="main.css" rel="stylesheet">
 </head>
 <body>
-
-<script src="main.js"></script>
+<form id="postForm">
+    <input type="text" id="title" placeholder="Title" required>
+    <textarea id="body" placeholder="Body" required></textarea>
+    <button type="submit">Add Post</button>
+</form>
+<div id="message"></div>
+<div id="posts"></div>
+<script type="module" src="./main.js"></script>
 </body>
 </html> 
