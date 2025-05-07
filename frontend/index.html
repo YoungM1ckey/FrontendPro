@@ -5,24 +5,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Movies</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Posts</title>
 </head>
 <body>
-
-<h1>Movies Placeholder</h1>
-<div id="add-movie">
-    <h2>Add Movie</h2>
-    <form id="movie-form">
-        <input type="text" name="title" placeholder="Movie Title" />
-        <input type="text" name="direction" placeholder="Direction" />
-        <input type="number" name="year" placeholder="Year" />
-    </form>
-</div>
-
-<div id="movies-section">
-    <h2>Movie list</h2>
-    <ul id="movies-list"></ul>
-</div>
-<script src="index.js"></script>
+<h1>Список постів</h1>
+<form id="post-form">
+    <input type="text" id="title" placeholder="Title" required />
+    <textarea id="body" placeholder="Text" required></textarea>
+    <button type="submit">Add post</button>
+</form>
+<div id="posts"></div>
+<script type="module" src="./index.js"></script>
 </body>
 </html>
