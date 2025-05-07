@@ -43,7 +43,6 @@ export function renderPosts(posts, onDeleteClick) {
       <button data-id="${post.id}" class="delete-post">Видалити</button>
       <div class="comments" id="comments-${post.id}"></div>
     `;
-
         div.querySelector('.delete-post').addEventListener('click', () => onDeleteClick(post.id));
         container.appendChild(div);
     });
